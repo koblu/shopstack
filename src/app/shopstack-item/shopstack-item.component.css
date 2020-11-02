@@ -1,0 +1,19 @@
+
+
+#itemview {
+    width: 200px;
+}
+
+#ph-image {
+    border-radius: 20px;
+    max-width: 200px;
+}
+
+#align-label {
+    position: absolute;
+    top: 180px;
+    display: flex;
+    direction: row;
+    width: 180px;
+    justify-content: space-between;
+}
