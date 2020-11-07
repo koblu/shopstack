@@ -10,8 +10,9 @@
 }
 
 #align-label {
-    position: absolute;
-    top: 180px;
+    position: relative;
+    top: -40px;
+    left: 10px;
     display: flex;
     direction: row;
     width: 180px;

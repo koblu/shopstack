@@ -1,0 +1,8 @@
+<div [className]="type" id="option">
+    <div id="info-bind">
+        <p id="setting-name" class="text-basic">{{name}}</p>
+        <p id="setting-desc" class="text-basic">{{desc}}</p>
+    </div>
+    <input type="checkbox" *ngIf="type === 'checkbox'" id="setting-checkbox">
+    <input type="range" *ngIf="type === 'slider'" id="setting-slider">
+</div>

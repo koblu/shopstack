@@ -7,6 +7,9 @@ import { ShopstackNavComponent } from './shopstack-nav/shopstack-nav.component';
 import { ShopstackMainComponent } from './shopstack-main/shopstack-main.component';
 import { ShopstackShopviewComponent } from './shopstack-shopview/shopstack-shopview.component';
 import { ShopstackItemComponent } from './shopstack-item/shopstack-item.component';
+import { ShopstackMenuComponent } from './shopstack-menu/shopstack-menu.component';
+import { ShopstackMenuoptionComponent } from './shopstack-menuoption/shopstack-menuoption.component';
+import { ShopstackItemfocusComponent } from './shopstack-itemfocus/shopstack-itemfocus.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ShopstackItemComponent } from './shopstack-item/shopstack-item.componen
     ShopstackNavComponent,
     ShopstackMainComponent,
     ShopstackShopviewComponent,
-    ShopstackItemComponent
+    ShopstackItemComponent,
+    ShopstackMenuComponent,
+    ShopstackMenuoptionComponent,
+    ShopstackItemfocusComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@
     height: 75px;
     background-color: yellow;
     position: fixed;
+    z-index: 1000;
 }
 
 #navbar-elements {
@@ -16,4 +17,13 @@
 
 #navbar-elements > * {
     margin: 15px;
+}
+#logo {
+    padding-top: 10px;
+}
+@media only screen and (min-width: 750) {
+    #logo {
+        padding-top: 5px;
+        width: 180px;
+    }
 }

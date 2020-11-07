@@ -1,5 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
  * {
      margin: 0;
      padding: 0;
+     z-index: 10;
+ }
+
+ .text-item {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: white;
+    -webkit-text-stroke: 0.7px black;
+ }
+
+ .text-basic {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    color: black;
  }

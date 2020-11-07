@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-shopstack-item',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopstack-item.component.css']
 })
 export class ShopstackItemComponent implements OnInit {
+  @Input() id: string;
 
   constructor() { }
 

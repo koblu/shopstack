@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopstack-shopview.component.css']
 })
 export class ShopstackShopviewComponent implements OnInit {
+  items: number[] = [];
+  constructor() { 
+    for( let i = 0; i < 10; i++) {
+      this.items.push(i);
+    }
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }

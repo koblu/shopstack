@@ -1,0 +1,16 @@
+#shopview-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#shopviewport {
+    display: flex;
+    direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#shopviewport > * {
+    margin: 15px;
+}
