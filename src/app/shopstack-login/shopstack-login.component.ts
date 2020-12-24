@@ -19,8 +19,8 @@ export class ShopstackLoginComponent implements OnInit {
   }
 
   authorize(): boolean {
-    let jwt = this.cookieService.get("SESSIONID");
-    console.log(jwt);
+    let jwt_token = this.cookieService.get("SESSIONID");
+    console.log(jwt_token, "test", this.cookieService.getAll());
     this.userAuthService.AuthenticateUser(this.un, this.pw).subscribe();
     this.router.navigate(['shop'])
     return true;
