@@ -1,0 +1,19 @@
+<div id="add-form">
+    <div class="bubble" id="header-bubble">
+        <h1 class="text-fancy" id="header">Add Item</h1>
+    </div>
+        <div id="center">
+        <div id="name-div" class="input-section">
+            <label for="item-name" class="text-basic">Item Name:</label>
+            <input type="text" class="iteminput" name="item-name" [(ngModel)]="name">
+        </div>
+        <div id="price-div" class="input-section">
+            <label for="item-name" class="text-basic">Item Price:</label>
+            <input type="number" min="1" step="any" class="iteminput" name="item-price" [(ngModel)]="price">
+        </div>
+        <div id="image-div" class="input-section">
+            <label for="item-image" class="text-basic">Item Image URL:</label>
+            <input type="text" class="iteminput" name="item-image" [(ngModel)]="image_loc">
+        </div>
+    </div>
+</div>

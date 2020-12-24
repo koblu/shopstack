@@ -1,9 +1,9 @@
 <div id="itemview">
-    <a routerLink="item/{{id}}">
-        <img src="assets/placeholder.png" id="ph-image">
+    <a routerLink="../item/{{id}}">
+        <img src="{{item.image}}" id="ph-image">
         <div id="align-label">
-            <p class="text-item" id="item-name">Placeholder</p>
-            <p class="text-item" id="item-price">$0.00</p>
+            <p class="text-item" id="item-name">{{item.name}}</p>
+            <p class="text-item" id="item-price">${{item.price}}</p>
         </div>
     </a>
 </div>

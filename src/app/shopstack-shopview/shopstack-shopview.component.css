@@ -14,3 +14,24 @@
 #shopviewport > * {
     margin: 15px;
 }
+
+#additem-button {
+    position: fixed;
+    width: 300px;
+    height: 65px;
+    top: calc( 97vh - 65px);
+    left: calc(50% - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#additem-button > p {
+    font-size: 23pt;
+    padding-bottom: 2px;
+}
+
+#button-displace {
+    height: 80px;
+}

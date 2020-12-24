@@ -1,1 +1,14 @@
-<p>shopstack-itemfocus works! {{id}}</p>
+<div id="focus-container">
+    <div *ngIf="item">
+        <div id="inner-focus-container">
+            <div id="focus-head">
+                <img id="item-photo" [src]="item.image">
+                <div id="align-label">
+                    <p class="text-item listing-size" id="item-name">{{item.name}}</p>
+                    <p class="text-item listing-size" id="item-price">${{item.price}}</p>
+                </div>
+                <p class="text-basic " id="item-desc">{{item.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

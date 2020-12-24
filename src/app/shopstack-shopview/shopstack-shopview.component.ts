@@ -1,4 +1,7 @@
+import { ItemsService } from './../items.service';
+import { Item } from '../item';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-shopstack-shopview',
@@ -6,15 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopstack-shopview.component.css']
 })
 export class ShopstackShopviewComponent implements OnInit {
-  items: number[] = [];
-  constructor() { 
-    for( let i = 0; i < 10; i++) {
-      this.items.push(i);
-    }
+  items: Item[] = [];
+  constructor( private itemService: ItemsService) { 
 
   }
 
   ngOnInit(): void {
+    this.itemService.getItems().subscribe(items => this.items = items);
   }
 
 }

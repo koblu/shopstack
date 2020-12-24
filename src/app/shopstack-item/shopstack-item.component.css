@@ -2,11 +2,18 @@
 
 #itemview {
     width: 200px;
+    height: 200px;
 }
 
 #ph-image {
     border-radius: 20px;
     max-width: 200px;
+    min-height: 200px;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
 }
 
 #align-label {

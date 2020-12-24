@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,9 @@ import { ShopstackItemComponent } from './shopstack-item/shopstack-item.componen
 import { ShopstackMenuComponent } from './shopstack-menu/shopstack-menu.component';
 import { ShopstackMenuoptionComponent } from './shopstack-menuoption/shopstack-menuoption.component';
 import { ShopstackItemfocusComponent } from './shopstack-itemfocus/shopstack-itemfocus.component';
+import { ShopstackAdditemComponent } from './shopstack-additem/shopstack-additem.component';
+import { ShopstackLoginComponent } from './shopstack-login/shopstack-login.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,17 @@ import { ShopstackItemfocusComponent } from './shopstack-itemfocus/shopstack-ite
     ShopstackItemComponent,
     ShopstackMenuComponent,
     ShopstackMenuoptionComponent,
-    ShopstackItemfocusComponent
+    ShopstackItemfocusComponent,
+    ShopstackAdditemComponent,
+    ShopstackLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

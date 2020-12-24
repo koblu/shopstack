@@ -1,5 +1,12 @@
 <div id="viewport-center">
     <div id="shopviewport">
-        <app-shopstack-item class="shopstack-item" *ngFor="let item of items" [id]="item"></app-shopstack-item>
+        <app-shopstack-item class="shopstack-item" *ngFor="let item of items; let i = index" [id]="i" [item]="item"></app-shopstack-item>
     </div>
+    <div id="button-displace"></div>
+    
+    <a routerLink="../add">
+        <div id="additem-button" class="bubble">
+            <p class="text-fancy">Sell Something</p>
+        </div>
+    </a>
 </div>

@@ -1,0 +1,23 @@
+#header-bubble {
+    width: 300px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#add-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 300px;
+    padding-top: 3px;
+}

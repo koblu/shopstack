@@ -1,4 +1,6 @@
+import { Item } from './../item';
 import { Component, Input, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-shopstack-item',
@@ -7,6 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ShopstackItemComponent implements OnInit {
   @Input() id: string;
+  @Input() item: Item;
 
   constructor() { }
 

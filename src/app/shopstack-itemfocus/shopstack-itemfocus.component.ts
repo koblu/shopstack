@@ -1,6 +1,9 @@
+import { ItemsService } from './../items.service';
+import { Item } from './../item';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-shopstack-itemfocus',
@@ -8,19 +11,24 @@ import { Location } from '@angular/common';
   styleUrls: ['./shopstack-itemfocus.component.css']
 })
 export class ShopstackItemfocusComponent implements OnInit {
-  id: number; 
+  id: number;
+  item: Item;
   constructor(  
     private route: ActivatedRoute,
-    private location: Location
-    ) { }
+    private location: Location,
+    private itemService: ItemsService
+    ) {
+      
+    }
 
   ngOnInit(): void {
     this.getItemInfo();
   }
 
   getItemInfo(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-
+    
+    let id : number = +this.route.snapshot.paramMap.get('id');
+    this.itemService.getItem(id+1).subscribe(item => {this.item = item[0]; console.log(item)});
   }
 
 }

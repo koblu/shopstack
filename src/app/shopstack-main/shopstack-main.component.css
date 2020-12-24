@@ -6,5 +6,5 @@
 
 :host /deep/ router-outlet + *{
     position: relative;
-    top: 75px;
+    top: 35px;
 }
