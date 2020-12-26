@@ -34,14 +34,20 @@ export class UserAuthService {
   }
   
 
-  isAuthenicated() : Observable<boolean> {
-      return this.http.get<boolean>(`${ITEM_API_URL}/token`);
-      /*
+  isAuthenicated(): Promise<boolean> {
+    return this.http.post<any>(`${ITEM_API_URL}/token`, {}, {withCredentials: true}).toPromise()
+    .then(
+      (status) => {
+        return status.authenticated;
+      }
+    );
+     /* 
     var user_status = localStorage.getItem("authenticated");
     if (user_status === "true") {
-      return true;
+      return of(true);
     } 
-    return false;
+    return of(false);
     */
+    
   }
 }

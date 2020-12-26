@@ -17,10 +17,12 @@ export class TokenInterceptor implements HttpInterceptor {
               next: HttpHandler): Observable<HttpEvent<any>> {
 
         const idToken = this.cookieService.get("CSRFID");
+        console.log("idtoken", idToken);
+
 
         if (idToken) {
             const cloned = req.clone({
-                headers: req.body.set("CSRF", idToken)
+                body: {...req.body, csrf: idToken}
             });
 
             return next.handle(cloned);
