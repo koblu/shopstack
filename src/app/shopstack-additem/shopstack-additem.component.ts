@@ -1,5 +1,8 @@
+import { Router } from '@angular/router';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { ItemsService } from './../items.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-shopstack-additem',
@@ -9,14 +12,39 @@ import { Component, OnInit } from '@angular/core';
 export class ShopstackAdditemComponent implements OnInit {
   name: string;
   price: number;
-  image_loc: string;
-  constructor(private itemsService: ItemsService) { }
+  description: string;
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
+  constructor(private itemsService: ItemsService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   addItem(): void {
-    //this.itemsService.addItem(name, "A new item!", image_loc, price)
+    this.itemsService.addItem(this.name, this.description, this.croppedImage, this.price);
+    this.router.navigate(["shop"]);
   }
+
+  //Image Cropper Functions
+  fileChangeEvent(event: any): void{
+    this.imageChangedEvent = event;
+  }
+
+  imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+    console.log(event.base64);
+  }
+  
+  imageLoaded() {
+    // show cropper
+  }
+  cropperReady() {
+    // cropper ready
+  }
+  
+  loadImageFailed() {
+    // show message
+  }
+
 
 }

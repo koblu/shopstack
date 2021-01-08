@@ -1,4 +1,5 @@
-import { of, Observable } from 'rxjs';
+import { of, Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
@@ -19,7 +20,11 @@ export class UserAuthService {
 
   AuthenticateUser(username, password: string): Observable<any> {
     var auth_resp: boolean;
-    return this.http.post<any>(`${ITEM_API_URL}/user`, {username: username, passhash: password}, {withCredentials: true});
+    return this.http.post(`${ITEM_API_URL}/user`, {username: username, passhash: password}, {withCredentials: true, responseType: 'text'})
+    .pipe (catchError((error) => {
+      return throwError(error.message);
+    })
+    );//.pipe((resp)=>{console.log(resp); return resp;});
 
     
     /*if (username === this.fake_un && password === this.fake_pw) {
@@ -35,9 +40,11 @@ export class UserAuthService {
   
 
   isAuthenicated(): Promise<boolean> {
+    console.log("We're checking to see if we can go!")
     return this.http.post<any>(`${ITEM_API_URL}/token`, {}, {withCredentials: true}).toPromise()
     .then(
       (status) => {
+        console.log("Can we go? -> ", status.authenticated);
         return status.authenticated;
       }
     );
@@ -49,5 +56,9 @@ export class UserAuthService {
     return of(false);
     */
     
+  }
+
+  logoutUser(): Observable<Object> {
+    return this.http.post(`${ITEM_API_URL}/logout`, {}, {withCredentials: true, responseType: 'text'}).pipe((resp)=>{console.log(resp); return resp;});
   }
 }

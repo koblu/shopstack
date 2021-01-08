@@ -1,0 +1,13 @@
+<div class="focus-width-control" id="review-container">
+    <span id="namebar">
+        <p id="username" class="text-basic">{{review.username}}</p>
+        <p id="rating" class="text-basic">{{review.rating}}/5</p>
+    </span>
+    <p id="title" class="text-basic">{{review.title}}</p>
+    <span>
+        <p id="body" class="text-basic" [class.show]="show">{{review.body}}</p>
+        <a (click)="show = !show">
+            <p class="text-basic" id="show-more-prompt" *ngIf="show_more">{{ show ? '(show less)': '(show more)' }}</p>
+        </a>
+    </span>
+</div>

@@ -12,19 +12,22 @@ export class ShopstackLoginComponent implements OnInit {
 
   un: string;
   pw: string;
-  auth: boolean;
   constructor(private userAuthService: UserAuthService, private router: Router, private cookieService: CookieService) { }
 
   ngOnInit(): void {
   }
 
   authorize(): boolean {
-    this.userAuthService.AuthenticateUser(this.un, this.pw).subscribe();
-    this.userAuthService.isAuthenicated().then(auth => {
-      if (auth) {
-        this.router.navigate(['shop']);
-      }
-    })
+    this.userAuthService.AuthenticateUser(this.un, this.pw).subscribe(() => {
+      this.userAuthService.isAuthenicated().then(auth => {
+        //console.log("Auth:", auth);
+        if (auth) {
+          this.router.navigate(['shop']);
+        } else {
+          //logic to say the user failed auth.
+        }
+      })
+    });
     
     return true;
   }

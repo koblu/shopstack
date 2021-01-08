@@ -1,0 +1,16 @@
+<div id="review-section">
+    <p class="text-basic" id="review-header">Reviews</p>
+    <div *ngIf="reviews.length > 0">
+        <div *ngFor="let review of reviews; index as i">
+            <app-shopstack-itemreview  [review]="review" [review-id]=i></app-shopstack-itemreview>
+        </div>
+    </div>
+    <p class="text-info" *ngIf="reviews.length == 0">There are no reviews for this item</p>
+    <form>
+        <textarea name="reviewbody" id="body" cols="30" rows="10" ([NgModel])="reviewbody"></textarea>
+        <div>
+            <img [src]="this.displayrating[i]" alt="" *ngFor="let number of [].constructor(5); let i = index" [id]="reviewid" [class]="displaytype" (click)="rateOf(i)">
+            <p *ngIf="rating">{{this.rating}}</p>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+#namebar {
+    display:flex;
+    justify-content: space-between;
+
+}
+
+#review-container {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#body {
+    height: 17px;
+    width: calc(100%-14ch);
+    overflow: hidden;
+}
+
+p.show#body {
+    overflow: visible;
+    width: 100%;
+    height: auto;
+}
+
+p#username {
+    font-style: italic;
+}
+
+p#rating {
+    font-style: bold;
+}
+
+p#title {
+    font-style: bold;
+    font-size: 17px;
+}
+
+span#namebar {
+    padding-top: 10px;
+}
+
+p#body {
+    margin-left: 20px;
+}

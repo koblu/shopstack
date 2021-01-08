@@ -3,6 +3,7 @@ import { Item } from './../item';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Review } from '../review';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { Location } from '@angular/common';
 export class ShopstackItemfocusComponent implements OnInit {
   id: number;
   item: Item;
+  reviews: Review[];
   constructor(  
     private route: ActivatedRoute,
     private location: Location,
@@ -27,8 +29,9 @@ export class ShopstackItemfocusComponent implements OnInit {
 
   getItemInfo(): void {
     
-    let id : number = +this.route.snapshot.paramMap.get('id');
-    this.itemService.getItem(id+1).subscribe(item => {this.item = item[0]; console.log(item)});
+    this.id = (+this.route.snapshot.paramMap.get('id')); //Our items index, locally, is zero indexed, but the mysql db isnt
+    this.itemService.getItem(this.id).subscribe(item => {this.item = item[0]; console.log(item)});
+    //this.itemService.getItemReviews(id).subscribe(reviews => {this.reviews = reviews});
   }
 
 }

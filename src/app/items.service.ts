@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from "rxjs";
 import { Item } from "./item";
+import { Review } from "./review";
 import { ITEMS } from "./mock-items";
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
@@ -21,7 +22,15 @@ export class ItemsService {
     return this.http.get<Item>(`${ITEM_API_URL}/item/${id}`);
   }
 
-  addItem(name, description, image: string, price, owner: number): void {
-    this.http.post(`${ITEM_API_URL}/item`, {name: name, description: description, price: price, image: image, owner: owner});
+  getItemReviews(id: number) : Observable<Review[]> {
+    return this.http.get<Review[]>(`${ITEM_API_URL}/reviews?itemId=${id}`,  )
   }
+
+  addItem(name, description, image: string, price: number): void {
+    if (!name || !description || price < 0 || !image) {
+      throw("Bad Item - Item not Specified");
+    }
+    this.http.post(`${ITEM_API_URL}/item`, {name: name, description: description, price: price, image: image},{withCredentials: true}).subscribe();
+  }
+
 }

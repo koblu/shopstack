@@ -1,19 +1,41 @@
-<div id="add-form">
+<form id="add-form">
     <div class="bubble" id="header-bubble">
         <h1 class="text-fancy" id="header">Add Item</h1>
     </div>
         <div id="center">
-        <div id="name-div" class="input-section">
-            <label for="item-name" class="text-basic">Item Name:</label>
-            <input type="text" class="iteminput" name="item-name" [(ngModel)]="name">
-        </div>
-        <div id="price-div" class="input-section">
-            <label for="item-name" class="text-basic">Item Price:</label>
-            <input type="number" min="1" step="any" class="iteminput" name="item-price" [(ngModel)]="price">
-        </div>
-        <div id="image-div" class="input-section">
-            <label for="item-image" class="text-basic">Item Image URL:</label>
-            <input type="text" class="iteminput" name="item-image" [(ngModel)]="image_loc">
+            <div id="name-div" class="input-section">
+                <label for="item-name" class="text-basic">Item Name:</label>
+                <input type="text" class="iteminput" name="item-name" [(ngModel)]="name">
+            </div>
+            <div id="name-div" class="input-section">
+                <label for="item-descr" class="text-basic">Item Description:</label>
+                <textarea class="iteminput" name="item-descr" [(ngModel)]="description"></textarea>
+            </div>
+            <div id="price-div" class="input-section">
+                <label for="item-name" class="text-basic">Item Price:</label>
+                <input type="number" min="1" step="any" class="iteminput" name="item-price" [(ngModel)]="price">
+            </div>
+            <div id="image-div" class="input-section">
+                <label for="item-image" class="text-basic">Item :</label>
+                <input type="file" class="iteminput" name="item-image" (change)="fileChangeEvent($event)" />
+                <div id="image-cropper-pair">
+                <image-cropper
+                    [imageChangedEvent]="imageChangedEvent"
+                    [maintainAspectRatio]="true"
+                    [aspectRatio]="1 / 1"
+                    format="png"
+                    (imageCropped)="imageCropped($event)"
+                    (imageLoaded)="imageLoaded()"
+                    (cropperReady)="cropperReady()"
+                    (loadImageFailed)="loadImageFailed()"
+                    id="image-crop">
+                </image-cropper>
+                <div *ngIf="croppedImage">
+                    <p class="text-basic">Crop Preview:</p>
+                    <img [src]="croppedImage" id="preview"/>
+                </div>
+            </div>
+            <input type="button" (click)="addItem()" class="bubble text-fancy" value="Sell">
         </div>
     </div>
-</div>
+</form>

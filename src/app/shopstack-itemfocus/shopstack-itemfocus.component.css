@@ -41,6 +41,11 @@
     right: 2ch;
 }
 
+#reviews {
+    width: 100%;
+    padding-top: 20px;
+}
+
 
 #item-photo {
     width: 750px;

@@ -1,3 +1,4 @@
 <div id="menu-container">
     <app-shopstack-menuoption *ngFor="let option of options" [name]=option.name [desc]=option.desc [type]=option.type></app-shopstack-menuoption>
+    <button id="logout" class="bubble text-basic" (click)="logout()">Logout</button>
 </div>

@@ -8,6 +8,9 @@
                     <p class="text-item listing-size" id="item-price">${{item.price}}</p>
                 </div>
                 <p class="text-basic " id="item-desc">{{item.description}}</p>
+                <div id="reviews">
+                    <app-shopstack-reviewsection id="reviews" [itemId]="item.id"></app-shopstack-reviewsection>
+                </div>
             </div>
         </div>
     </div>

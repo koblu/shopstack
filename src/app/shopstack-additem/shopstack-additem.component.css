@@ -21,3 +21,25 @@
     width: 300px;
     padding-top: 3px;
 }
+
+#preview {
+    width: 100px;
+    height:100px;
+}
+
+#image-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#image-crop {
+    width: 60%;
+    height: auto;
+}
+
+#image-cropper-pair {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 50%;
+}

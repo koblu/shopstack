@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { ShopstackItemfocusComponent } from './shopstack-itemfocus/shopstack-ite
 import { ShopstackAdditemComponent } from './shopstack-additem/shopstack-additem.component';
 import { ShopstackLoginComponent } from './shopstack-login/shopstack-login.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ShopstackItemreviewComponent } from './shopstack-itemreview/shopstack-itemreview.component';
+import { ShopstackReviewsectionComponent } from './shopstack-reviewsection/shopstack-reviewsection.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +32,16 @@ import { CookieService } from 'ngx-cookie-service';
     ShopstackMenuoptionComponent,
     ShopstackItemfocusComponent,
     ShopstackAdditemComponent,
-    ShopstackLoginComponent
+    ShopstackLoginComponent,
+    ShopstackItemreviewComponent,
+    ShopstackReviewsectionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ImageCropperModule
   ],
   providers: [CookieService,
   {
