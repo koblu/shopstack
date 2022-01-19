@@ -1,5 +1,11 @@
 # ShopstackApp
 
+## About
+
+This is a test Angular project I created, with the idea to simulate a small online marketplace, mostly to get more experience creating a full stack application.
+
+I connected it to an AWS S3 Bucket, and created a flow to upload documents. The styling for each component was created with vanilla CSS. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
 ## Development server
